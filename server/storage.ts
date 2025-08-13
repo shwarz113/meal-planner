@@ -42,9 +42,6 @@ export class MemStorage implements IStorage {
     this.dishes = new Map();
     this.mealEvents = new Map();
     this.shoppingListItems = new Map();
-    
-    // Initialize with some sample dishes
-    this.initializeSampleData();
   }
 
   private async initializeSampleData() {
