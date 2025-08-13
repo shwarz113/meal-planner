@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 98%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(122 39% 49%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(36 100% 50%);
+  --secondary-foreground: hsl(0 0% 0%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(207 90% 54%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201.4286 30.4348% 90.9804%);
+  --input: hsl(200 23.0769% 97.4510%);
+  --ring: hsl(207 90% 54%);
+  --chart-1: hsl(122 39% 49%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(122 39% 49%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(207 90% 54%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(201.4286 30.4348% 90.9804%);
+  --sidebar-ring: hsl(207 90% 54%);
+  --font-sans: 'Roboto', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --breakfast: hsl(45 100% 70%);
+  --lunch: hsl(14 100% 77%);
+  --dinner: hsl(88 50% 70%);
+  --breakfast-foreground: hsl(0 0% 0%);
+  --lunch-foreground: hsl(0 0% 0%);
+  --dinner-foreground: hsl(0 0% 0%);
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(200 6.6667% 91.1765%);
+  --card: hsl(228 9.8039% 10%);
+  --card-foreground: hsl(0 0% 85.0980%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(200 6.6667% 91.1765%);
+  --primary: hsl(122 39% 49%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(36 100% 50%);
+  --secondary-foreground: hsl(0 0% 0%);
+  --muted: hsl(0 0% 9.4118%);
+  --muted-foreground: hsl(210 3.3898% 46.2745%);
+  --accent: hsl(207 90% 54%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 5.2632% 14.9020%);
+  --input: hsl(207.6923 27.6596% 18.4314%);
+  --ring: hsl(207 90% 54%);
+  --breakfast: hsl(45 100% 40%);
+  --lunch: hsl(14 100% 50%);
+  --dinner: hsl(88 50% 40%);
+  --breakfast-foreground: hsl(0 0% 100%);
+  --lunch-foreground: hsl(0 0% 100%);
+  --dinner-foreground: hsl(0 0% 100%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .meal-breakfast {
+    background-color: hsl(var(--breakfast));
+    color: hsl(var(--breakfast-foreground));
+  }
+  
+  .meal-lunch {
+    background-color: hsl(var(--lunch));
+    color: hsl(var(--lunch-foreground));
+  }
+  
+  .meal-dinner {
+    background-color: hsl(var(--dinner));
+    color: hsl(var(--dinner-foreground));
+  }
+
+  .calendar-day {
+    min-height: 120px;
+  }
+  
+  @media (max-width: 768px) {
+    .calendar-day {
+      min-height: 80px;
+    }
+  }
+
+  .bottom-nav {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
