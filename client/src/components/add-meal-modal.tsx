@@ -93,9 +93,6 @@ export default function AddMealModal({
         <DialogHeader>
           <div className="flex items-center justify-between">
             <DialogTitle>Добавить блюдо</DialogTitle>
-            <Button variant="ghost" size="sm" onClick={handleClose}>
-              <X className="h-4 w-4" />
-            </Button>
           </div>
         </DialogHeader>
 
@@ -141,10 +138,8 @@ export default function AddMealModal({
                         <Button
                           key={type.value}
                           type="button"
-                          variant="outline"
-                          className={`p-2 h-auto flex-col space-y-1 ${
-                            isSelected ? type.color : "bg-gray-50"
-                          }`}
+                          variant={isSelected ? "default": "outline"}
+                          className={`p-2 h-auto flex-col space-y-1`}
                           onClick={() => {
                             field.onChange(type.value);
                             setSelectedMealType(type.value);
@@ -195,7 +190,7 @@ export default function AddMealModal({
               <Button type="button" variant="outline" className="flex-1" onClick={handleClose}>
                 Отмена
               </Button>
-              <Button type="submit" className="flex-1">
+              <Button type="submit" className="flex-1" disabled={!form.formState.isValid}>
                 Добавить
               </Button>
             </div>

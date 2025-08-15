@@ -134,10 +134,10 @@ export default function Shopping() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/shopping-list"] });
-      toast({
-        title: "Список обновлен",
-        description: "Список покупок создан на основе запланированных блюд",
-      });
+      // toast({
+      //   title: "Список обновлен",
+      //   description: "Список покупок создан на основе запланированных блюд", duration: 1000
+      // });
     },
     onError: () => {
       toast({
@@ -299,6 +299,7 @@ export default function Shopping() {
                   if (!earliest) return itemDate;
                   return itemDate < earliest ? itemDate : earliest;
                 }, null as string | null);
+                console.log({dishName, items})
 
                 return (
                 <Card key={dishName}>

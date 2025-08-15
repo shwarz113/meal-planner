@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { format } from "date-fns";
-import { ru } from "date-fns/locale";
 import { ChevronLeft, ChevronRight, CalendarDays, Calendar as CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";

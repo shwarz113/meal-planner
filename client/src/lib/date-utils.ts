@@ -1,4 +1,15 @@
-import { format, startOfWeek, endOfWeek, eachDayOfInterval, addWeeks, subWeeks, startOfMonth, endOfMonth, eachWeekOfInterval } from 'date-fns';
+import {
+  format,
+  startOfWeek,
+  endOfWeek,
+  eachDayOfInterval,
+  addWeeks,
+  subWeeks,
+  startOfMonth,
+  endOfMonth,
+  eachWeekOfInterval,
+  addDays
+} from 'date-fns';
 import { ru } from 'date-fns/locale';
 
 export function getWeekRange(date: Date) {
@@ -10,6 +21,11 @@ export function getWeekRange(date: Date) {
 export function getWeekDays(date: Date) {
   const { start, end } = getWeekRange(date);
   return eachDayOfInterval({ start, end });
+}
+
+export function getTwoWeekDays(date: Date) {
+  const end = addDays(date, 14)
+  return eachDayOfInterval({ start: date, end });
 }
 
 export function getMonthRange(date: Date) {
@@ -28,7 +44,7 @@ export function formatDateRange(start: Date, end: Date) {
 }
 
 export function formatDate(date: Date) {
-  return format(date, 'yyyy-MM-dd');
+  return format(date, 'dd.MM.yyyy');
 }
 
 export function formatDateDisplay(date: Date) {
