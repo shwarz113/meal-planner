@@ -36,6 +36,12 @@ export const shoppingListItems = pgTable("shopping_list_items", {
 export const insertDishSchema = createInsertSchema(dishes).omit({
   id: true,
   createdAt: true,
+}).extend({
+  ingredients: z.array(z.object({
+    name: z.string(),
+    quantity: z.string(),
+    unit: z.string(),
+  })).default([]),
 });
 
 export const insertMealEventSchema = createInsertSchema(mealEvents).omit({

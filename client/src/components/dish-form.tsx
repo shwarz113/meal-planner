@@ -53,7 +53,7 @@ export default function DishForm({ dish, onSave, onCancel }: DishFormProps) {
       name: dish?.name || "",
       description: dish?.description || "",
       mealType: dish?.mealType as any || "breakfast",
-      ingredients: dish?.ingredients || [{ name: "", quantity: "", unit: "" }],
+      ingredients: Array.isArray(dish?.ingredients) ? dish.ingredients : [{ name: "", quantity: "", unit: "" }],
     },
   });
 

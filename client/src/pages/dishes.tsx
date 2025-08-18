@@ -262,20 +262,20 @@ export default function Dishes() {
                     </div>
                   </CardHeader>
                   
-                  {dish.ingredients && Array.isArray(dish.ingredients) && dish.ingredients.length > 0 && (
+                  {Array.isArray(dish.ingredients) && dish.ingredients.length > 0 && (
                     <CardContent className="pt-0">
                       <div className="text-sm text-gray-600">
                         <div className="font-medium mb-1">Ингредиенты:</div>
                         <div className="text-xs space-y-1">
-                          {(dish.ingredients as any[]).slice(0, 3).map((ingredient, index) => (
+                          {dish.ingredients.slice(0, 3).map((ingredient, index) => (
                             <div key={index} className="flex justify-between">
                               <span>{ingredient.name}</span>
                               <span>{ingredient.quantity} {ingredient.unit}</span>
                             </div>
                           ))}
-                          {(dish.ingredients as any[]).length > 3 && (
+                          {dish.ingredients.length > 3 && (
                             <div className="text-gray-400">
-                              +{(dish.ingredients as any[]).length - 3} ещё
+                              +{dish.ingredients.length - 3} ещё
                             </div>
                           )}
                         </div>

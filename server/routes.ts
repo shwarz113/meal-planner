@@ -8,6 +8,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Dishes routes
   app.get("/api/dishes", async (req, res) => {
     const dishes = await storage.getDishes();
+    console.log('dishes', dishes)
+    console.log('storage', storage)
     res.json(dishes);
   });
 
